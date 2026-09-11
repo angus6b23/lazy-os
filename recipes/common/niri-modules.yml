@@ -1,0 +1,13 @@
+modules:
+  - type: dnf
+    install:
+      packages:
+        - niri
+        - noctalia
+        - xdg-desktop-portal-gnome
+        - cliphist
+
+  - type: files
+    files:
+      - source: system/niri
+        destination: /

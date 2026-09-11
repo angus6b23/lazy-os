@@ -1,0 +1,179 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+
+modules: 
+  - type: dnf
+    repos:
+      copr:
+        - ublue-os/packages
+    install:
+      install-weak-deps: false
+      packages:
+        - ublue-os-udev-rules
+        - ublue-os-update-services
+        - ublue-os-signing
+        - ublue-os-luks
+        - ublue-os-just
+
+  - type: bling
+    install:
+      - negativo17
+
+  - type: dnf
+    repos:
+      copr:
+        - alternateved/keyd
+        - dejan/lazygit
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+    remove:
+      packages:
+        # remove ibus
+        - ibus
+        - ibus-libs
+        - ibus-gtk3
+        - ibus-gtk4
+        - ibus-qt
+        - ibus-libpinyin
+        - ibus-setup
+        - ibus-typing-booster
+        - ibus-m17n
+        - ibus-anthy
+        - ibus-anthy-python
+        - ibus-hangul
+        - ibus-chewing
+        - python3-ibus
+
+    install:
+      install-weak-deps: false
+      packages:
+        # editor
+        - neovim
+        - fd-find
+        - ripgrep
+        - gcc
+        - lazygit
+
+        # input
+        - fcitx5
+        - fcitx5-gtk4
+        - fcitx5-qt6
+        - fcitx5-table-extra
+        - fcitx5-chinese-addons
+        - fcitx5-mozc
+        - fcitx5-autostart
+
+        # codecs and ffmpeg
+        - mpv
+        - heif-pixbuf-loader
+        - ffmpeg-free
+        - ffmpegthumbnailer
+        - pipewire-libs-extra
+
+        # environment
+        - fzf
+        - fish
+        - yt-dlp-fish-completion
+        - kdeconnectd
+        - tuned-ppd
+        - xorg-x11-server-Xwayland
+        - headsetcontrol
+        - mediainfo
+        - polkit
+        - fprintd-pam
+        - xdg-user-dirs
+        - dbus-tools
+        - dbus-daemon
+        - wl-clipboard
+        - pavucontrol
+        - playerctl
+        - qt5-qtwayland
+        - qt6-qtwayland
+        - vulkan-validation-layers
+        - vulkan-tools
+        - google-noto-emoji-fonts
+        - ddcutil
+        - openssl
+        - just
+        - alsa-firmware
+        - imv
+        - distrobox
+        - podman-compose
+
+        # sound
+        - wireplumber
+        - pipewire
+        - pamixer
+        - pulseaudio-utils
+
+        # networking
+        - network-manager-applet
+        - NetworkManager-openvpn
+        - NetworkManager-openvpn-gnome
+        - NetworkManager-openconnect
+        - NetworkManager-openconnect-gnome
+        - bluez
+        - bluez-tools
+        - blueman
+        - firewall-config
+        - tailscale
+
+        # file manager
+        - dolphin
+        - ark
+        - android-tools
+
+        # screenshot
+        - slurp
+        - grim
+
+        # display
+        - wlr-randr
+        - wlsunset
+        - brightnessctl
+        - kanshi
+
+        # theme and GUI
+        - gnome-icon-theme
+        - paper-icon-theme
+        - breeze-icon-theme
+        - papirus-icon-theme
+
+        # software developing
+        - nodejs24
+        - rustup
+        - golang
+
+        # utilities
+        - alacritty
+        - just
+        - powerstat
+        - btop
+        - syncthing
+        - yt-dlp
+        - tmux
+        - fastfetch
+        - rclone
+        - fuse
+        - fuse-libs
+        - keyd
+
+  - type: systemd
+    system:
+      enabled:
+        - keyd.service
+        - tailscaled
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - GeistMono
+
+  - type: files
+    files:
+      - source: system/usr
+        destination: /usr
+      - source: system/etc
+        destination: /etc
+
+  - type: justfiles
+    validate: false
