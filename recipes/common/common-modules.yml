@@ -67,6 +67,7 @@ modules:
         - heif-pixbuf-loader
         - ffmpeg-free
         - ffmpegthumbnailer
+        - ffmpegthumbs
         - pipewire-libs-extra
 
         # environment
@@ -120,6 +121,7 @@ modules:
 
         # file manager
         - dolphin
+        - plasma-systemsettings
         - ark
         - android-tools
 

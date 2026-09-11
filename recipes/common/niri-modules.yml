@@ -5,6 +5,8 @@ modules:
         - niri
         - noctalia
         - xdg-desktop-portal-gnome
+        - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-kde
         - cliphist
 
   - type: files
