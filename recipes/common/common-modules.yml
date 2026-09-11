@@ -71,6 +71,7 @@ modules:
 
         # environment
         - fzf
+        - zsh
         - fish
         - yt-dlp-fish-completion
         - kdeconnectd
