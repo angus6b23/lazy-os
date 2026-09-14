@@ -397,7 +397,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Open nocalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Mod+W hotkey-overlay-title="Open nocalia lockscreen" { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+Q hotkey-overlay-title="Open nocalia lockscreen" { spawn-sh "noctalia msg panel-toggle session"; }
     Alt+V hotkey-overlay-title="Open nocalia clipboard" { spawn-sh "noctalia msg panel-toggle clipboard"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -432,7 +432,7 @@ binds {
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false { close-window; }
+    Mod+X repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
@@ -669,6 +669,5 @@ gestures {
     off
   }
 }
-
 
 // include "noctalia.kdl"
