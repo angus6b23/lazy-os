@@ -21,7 +21,6 @@ modules:
   - type: dnf
     repos:
       copr:
-        - alternateved/keyd
         - dejan/lazygit
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
@@ -159,12 +158,10 @@ modules:
         - rclone
         - fuse
         - fuse-libs
-        - keyd
 
   - type: systemd
     system:
       enabled:
-        - keyd.service
         - tailscaled
 
   - type: fonts
